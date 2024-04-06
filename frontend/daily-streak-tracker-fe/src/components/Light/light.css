@@ -1,0 +1,11 @@
+.light{
+    width: 2.7rem;
+    height: 2.7rem;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+.lightIcon{
+    width: 1.6rem;
+    height: 1.6rem;
+}
