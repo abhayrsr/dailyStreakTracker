@@ -1,5 +1,5 @@
 import './header.css';
-import Signout from '../Buttons/signOut';
+import Signout from '../Buttons/signOutButton/signOut';
 import Light from '../Light/light';
 import StreakosLogo from '../../assets/images/StreakosCrop.png';
 

@@ -1,0 +1,8 @@
+.dashboard-components{
+    display: flex;
+
+}
+
+.dashboard-tasks{
+    position: relative;
+}
