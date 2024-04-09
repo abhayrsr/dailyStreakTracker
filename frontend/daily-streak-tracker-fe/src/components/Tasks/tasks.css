@@ -1,11 +1,72 @@
-.tasks{
-    margin: 1rem;
-    padding: 0rem 0rem 1rem 1rem;
+.input-tasks{
+    width: 40vw;
+    margin: 1vw;
+    padding: 2vh;
+    position: relative;
+    top: 20vh;
+    right: 15vw;
+    font-size: large;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+.add-button{
+    width: 2vw;
+    height: 5vh;
+    font-size: large;
+    position: relative;
+    top: 20vh;
+    right: 15vw;
+    cursor: pointer;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+.entered-tasks{
+    margin: 0vh 5vh -8vh 5vh;
+}
+
+.checkbox-tasks{
+    width: 2vw;
+    height: 5vh;
+    position: relative;
+    top: 25.8vh;
+    right: 35vw;
+}
+
+.added-tasks{
+    width: 37vw;
+    height: 5vh;
+    margin: 0.1vw;
+    padding: 1vh;
+    position: relative;
+    top: 20vh;
+    right: 13.5vw;
+    font-size: large;
+    border-radius: 0.5rem;
+    background-color: #ffffff;
     display: flex;
-    flex-direction: column;
-    align-items:flex-start;
-    width: 22vw;
-    height: 17vh;
-    border-radius: 1rem;
-    background-color: black;
+    align-items: flex-start;
+}
+
+.edit-button{
+    width: 2vw;
+    height: 5vh;
+    font-size: large;
+    position: relative;
+    top: 14.8vh;
+    left: 7vw;
+    cursor: pointer;
+    border-radius: 0.5rem;
+}
+
+.delete-button{
+    width: 2vw;
+    height: 5vh;
+    font-size: large;
+    position: relative;
+    top: 14.8vh;
+    left: 7.5vw;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    
 }
