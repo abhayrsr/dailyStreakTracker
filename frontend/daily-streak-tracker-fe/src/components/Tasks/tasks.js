@@ -11,13 +11,22 @@ export default function Tasks(){
         setText(e.target.value)
     }
 
+    function handleSubmit(e){
+      e.preventDefault();
+    }
+
     function addTasks(){
         console.log(id)
-        setTasks([...tasks, {
+        setTasks((prevTasks) => {
+          const newTasks = {
             id: id,
             task: text,
-        }])
-        id++;
+            completed: false
+          };
+          id++;
+          return [...prevTasks, newTasks]
+        })
+        
         setText('');
     }
 
@@ -33,30 +42,44 @@ export default function Tasks(){
         })
     }
 
+    function handleTaskChange(id){
+      setTasks(prevTasks => {
+       return  prevTasks.map((task) => {
+          if(task.id === id){
+            return {...task, completed: !task.completed}
+          }
+          return task;
+        })
+      })
+    }
+
     function handleEdit(id){
         setTasks()
     }
 
     function handleKey(e){
         if(e.key === "Enter"){
+            e.preventDefault();
             addTasks();
         }
     }
 
     return(
-        <div className="tasks">
+        <form className="tasks" onSubmit={handleSubmit}>
             <div className="enter-tasks">
                 <input
                     className='input-tasks' 
                     type="text"
+                    maxlength="70"
                     name="text"
                     value={text}
-                    placeholder="enter the tasks"
+                    placeholder="enter the tasks(- max 70 characters)"
                     onChange={handleChange}
                     onKeyDown={handleKey}
                     />
                 <button 
                     className="add-button"
+                    type="button"
                     onClick={addTasks}
                     >
                     +
@@ -67,31 +90,32 @@ export default function Tasks(){
             tasks.length !== 0 ? 
                 <ul className="tasks"> 
                     {tasks.map((task) => (
-                        <div className='entered-tasks'>
-                            <input 
-                                className='checkbox-tasks'
-                                type='checkbox' />
+    
                             <li key={task.id} className='added-tasks'>
+                            <input 
+                                key={task.id}
+                                className='checkbox-tasks'
+                                value={task.task}
+                                type="checkbox"
+                                checked={task.complete}
+                                onChange={(e) => handleTaskChange(task.id)} />
                             {task.task}
-                            </li>
                             <button 
-                                key={task.id} 
                                 className='edit-button'
                                 onClick={() => handleEdit(task.id)}>
                                 /
                             </button>
                             <button 
-                                key={task.id} 
                                 className='delete-button'
                                 onClick={() => handleDelete(task.id)} >
                                 -
                             </button>
-                        </div>
+                            </li>
                     ))}
                 </ul>
         
                 : <div> </div>
            }
-        </div>
+        </form>
     )
 }
