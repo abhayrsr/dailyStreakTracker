@@ -6,3 +6,8 @@
 .dashboard-tasks{
     position: relative;
 }
+
+.dashboard-heatmap{
+    position: relative;
+    right: 9vw;
+}
