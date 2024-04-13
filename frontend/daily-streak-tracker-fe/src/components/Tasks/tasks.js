@@ -1,11 +1,17 @@
 import { useState } from 'react';
+import Popup from 'reactjs-popup';
 import './tasks.css';
 
 export default function Tasks() {
     const [text, setText] = useState('');
-    const [newText, setNewText] = useState(''); // Separate state for newHandleChange
+    const [newText, setNewText] = useState(''); 
     const [tasks, setTasks] = useState([]);
-    const [editTaskId, setEditTaskId] = useState(null);
+    const [show, setShow] = useState(false);
+
+    function handleShow(){
+        setShow(!show);
+    }
+
 
     function handleChange(e) {
         setText(e.target.value);
@@ -53,29 +59,30 @@ export default function Tasks() {
         });
     }
 
-    function cancelEdit(){
-        setEditTaskId(null)
-    }
 
-    function editTask(task) {
-        if (task.id === editTaskId) {
-            return (
-                <div>
-                    <input
-                        type="text"
-                        value={newText}
-                        onChange={newHandleChange}
-                    />
-                    <button onClick={cancelEdit}>Cancel</button> {/* Button to cancel editing */}
-                </div>
-            );
-        } else {
-            return <span>{task.task}</span>;
-        }
+    function editTask(id) {
+        console.log(newText)
+    
+       setTasks(prevTasks => {
+        return prevTasks.map((task) => {
+            if(task.id === id){
+                return { ...task, task: newText };
+            }
+            return task;
+        })
+       })
+       setNewText('');
+       setShow(false);
     }
 
     function handleEdit(id) {
-        setEditTaskId(id);
+      
+        const taskToEdit = tasks.find(task => task.id === id);
+        console.log(taskToEdit)
+        if (taskToEdit) {
+            setNewText(taskToEdit.task);
+        }
+        setShow(true);
     }
 
     function handleKey(e) {
@@ -86,61 +93,75 @@ export default function Tasks() {
     }
 
     return (
-        <div className='task-container'>
-            <form className="tasks" onSubmit={handleSubmit}>
-                <div className="enter-tasks">
-                    <input
-                        className='input-tasks'
-                        type="text"
-                        maxLength="70"
-                        name="text"
-                        value={text}
-                        placeholder="enter the tasks (- max 70 characters)"
-                        onChange={handleChange}
-                        onKeyDown={handleKey}
-                    />
-                    <button
-                        className="add-button"
-                        type="button"
-                        onClick={addTasks}
-                    >
-                        +
-                    </button>
-                </div>
+      <div className="task-container">
+        <form className="tasks" onSubmit={handleSubmit}>
+          <div className="enter-tasks">
+            <input
+              className="input-tasks"
+              type="text"
+              maxLength="70"
+              name="text"
+              value={text}
+              placeholder="enter the tasks (- max 70 characters)"
+              onChange={handleChange}
+              onKeyDown={handleKey}
+            />
+            <button className="add-button" type="button" onClick={addTasks}>
+              +
+            </button>
+          </div>
 
-                {tasks.length !== 0 ?
-                    <ul className="tasks">
-                        {tasks.map((task) => (
-                            <li key={task.id} className='added-tasks'>
-                                <input
-                                    key={task.id}
-                                    className='checkbox-tasks'
-                                    value={task.task}
-                                    type="checkbox"
-                                    checked={task.completed}
-                                    onChange={(e) => handleTaskChange(task.id)} />
-                                <span>{task.task}</span>
-                                <button
-                                    key={task.id}
-                                    className='edit-button'
-                                    onClick={() => { handleEdit(task.id) }}>
-                                    /
-                                </button>
-                                <button
-                                    key={task.id}
-                                    className='delete-button'
-                                    onClick={() => handleDelete(task.id)} >
-                                    -
-                                </button>
-                            </li>
-                        ))}
-                    </ul>
-                    : <div> </div>
-                }
-            </form>
-            {editTaskId !== null &&
-                <div className="blur-background"></div>
-            }
-        </div>
-    )
+          {tasks.length !== 0 ? (
+            <ul className="tasks">
+              {tasks.map((task) => (
+                <li key={task.id} className="added-tasks">
+                  <input
+                    key={task.id}
+                    className="checkbox-tasks"
+                    value={task.task}
+                    type="checkbox"
+                    checked={task.completed}
+                    onChange={(e) => handleTaskChange(task.id)}
+                  />
+                  <span>{task.task}</span>
+                  <Popup
+                    trigger={ <button
+                        key={task.id}
+                        className="edit-button"
+                        onClick={() => {
+                          handleEdit(task.id);
+                        }}
+                      >
+                        /
+                      </button>}
+                    position="center"
+                  >
+                  {show &&  <div>
+                    <input
+                        className='popup-input'
+                        key={task.id}
+                        type="text"
+                        value={newText} 
+                        onChange={newHandleChange}
+                    />
+                     <button className='popup-button' key={task.id} onClick={() =>{editTask(task.id); handleShow();}}>save</button>
+                    </div>}
+                  
+                  </Popup>
+                  <button
+                    key={task.id}
+                    className="delete-button"
+                    onClick={() => handleDelete(task.id)}
+                  >
+                    -
+                  </button>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <div> </div>
+          )}
+        </form>
+      </div>
+    );
 }
