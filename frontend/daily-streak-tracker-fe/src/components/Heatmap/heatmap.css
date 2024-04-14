@@ -10,3 +10,15 @@
     background-color: black;
    
 }
+
+.name{
+    color: white;
+    position: relative;
+    top: 10vh;
+}
+
+.calendar{
+   position: relative;
+   top: 15vh; 
+}
+
