@@ -1,24 +1,13 @@
 import { useState } from 'react';
-import Popup from 'reactjs-popup';
 import './tasks.css';
 
 export default function Tasks() {
     const [text, setText] = useState('');
-    const [newText, setNewText] = useState(''); 
     const [tasks, setTasks] = useState([]);
-    const [show, setShow] = useState(false);
-
-    function handleShow(){
-        setShow(!show);
-    }
-
+    const [editId, setEditId] = useState(0);
 
     function handleChange(e) {
         setText(e.target.value);
-    }
-
-    function newHandleChange(e) {
-        setNewText(e.target.value);
     }
 
     function handleSubmit(e) {
@@ -36,6 +25,19 @@ export default function Tasks() {
         });
 
         setText('');
+        if(editId){
+          const taskToEdit = tasks.find((task) => {
+            return task.id === editId
+          })
+
+          const updatedTasks = tasks.map((task) => {
+           return task.id === taskToEdit.id ? {...task, task: text} : task
+          })
+          setTasks(updatedTasks);
+          setEditId(0);
+          return;
+        }
+        
     }
 
     function handleDelete(id) {
@@ -59,30 +61,12 @@ export default function Tasks() {
         });
     }
 
-
-    function editTask(id) {
-        console.log(newText)
-    
-       setTasks(prevTasks => {
-        return prevTasks.map((task) => {
-            if(task.id === id){
-                return { ...task, task: newText };
-            }
-            return task;
-        })
-       })
-       setNewText('');
-       setShow(false);
-    }
-
     function handleEdit(id) {
       
         const taskToEdit = tasks.find(task => task.id === id);
-        console.log(taskToEdit)
-        if (taskToEdit) {
-            setNewText(taskToEdit.task);
-        }
-        setShow(true);
+        setText(taskToEdit.task);
+        setEditId(id);
+        
     }
 
     function handleKey(e) {
@@ -124,8 +108,7 @@ export default function Tasks() {
                     onChange={(e) => handleTaskChange(task.id)}
                   />
                   <span>{task.task}</span>
-                  <Popup
-                    trigger={ <button
+                  <button
                         key={task.id}
                         className="edit-button"
                         onClick={() => {
@@ -133,21 +116,8 @@ export default function Tasks() {
                         }}
                       >
                         /
-                      </button>}
-                    position="center"
-                  >
-                  {show &&  <div>
-                    <input
-                        className='popup-input'
-                        key={task.id}
-                        type="text"
-                        value={newText} 
-                        onChange={newHandleChange}
-                    />
-                     <button className='popup-button' key={task.id} onClick={() =>{editTask(task.id); handleShow();}}>save</button>
-                    </div>}
-                  
-                  </Popup>
+                      </button>
+                 
                   <button
                     key={task.id}
                     className="delete-button"
