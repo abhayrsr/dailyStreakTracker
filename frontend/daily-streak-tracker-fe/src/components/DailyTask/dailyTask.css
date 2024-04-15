@@ -8,6 +8,8 @@
     height: 14vh;
     border-radius: 1rem;
     background: linear-gradient(to right, #000000, #161B22);
+    position: relative;
+    left: 22.5vw;
 }
 
 .dailyTask-date{

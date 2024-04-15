@@ -1,10 +1,24 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import Efficiency from '../Efficiency/efficiency';
 import './tasks.css';
 
 export default function Tasks() {
     const [text, setText] = useState('');
     const [tasks, setTasks] = useState([]);
     const [editId, setEditId] = useState(0);
+    const [efficiency, setEfficiency] = useState(0);
+    console.log("effeciency"+efficiency);
+
+    function handleEfficiency(){
+      const numberOfTasks = tasks.length;
+      const numberOfTasksDone = tasks.filter((task) => task.completed === true).length;
+      
+      let efficiency = (numberOfTasksDone/numberOfTasks)*100;
+      if (isNaN(efficiency)) {
+        efficiency = 0;
+      }
+      setEfficiency(efficiency);
+    }
 
     function handleChange(e) {
         setText(e.target.value);
@@ -60,6 +74,10 @@ export default function Tasks() {
             });
         });
     }
+
+    useEffect(() => {
+      handleEfficiency();
+  }, [tasks]);
 
     function handleEdit(id) {
       
@@ -132,6 +150,7 @@ export default function Tasks() {
             <div> </div>
           )}
         </form>
+        <div className="efficiency-component">  <Efficiency efficiency={efficiency}/> </div>
       </div>
     );
 }

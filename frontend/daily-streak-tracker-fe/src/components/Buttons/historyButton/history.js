@@ -6,7 +6,7 @@ export default function History(){
     return(
         <div className="button-component">
             <div className="button-history">
-                <a href="www" className="text-history">History</a>
+                <a href="www" className="text-history">Heatmap</a>
             </div>
         </div>
     )

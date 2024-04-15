@@ -8,6 +8,7 @@
     border-top-right-radius: 2rem;
     border-bottom-right-radius: 2rem;
     background-color: black;
+    position: fixed;
 }
 
 .profile-section{
@@ -50,6 +51,8 @@
 
 .profile-name .name{
     color: #ffffff;
+    position: relative;
+    top: 0;
 }
 
 @media screen and (max-width: 768px){

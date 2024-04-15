@@ -3,7 +3,7 @@ import Header from '../../components/Header/header'
 import Profile from '../../components/Profile/profile'
 import DailyTask from '../../components/DailyTask/dailyTask';
 import Tasks from '../../components/Tasks/tasks';
-import Heatmap from '../../components/Heatmap/heatmap';
+import Effeciency from '../../components/Efficiency/efficiency';
 
 export default function Dashboard(){
     return (
@@ -21,10 +21,8 @@ export default function Dashboard(){
                 <div className="dashboard-tasks">
                     <Tasks />
                 </div>
-                <div className="dashboard-heatmap">
-                    <Heatmap />
-                </div>
             </div>
+            
         </div>
     )
 }
