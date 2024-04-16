@@ -3,7 +3,7 @@ import Header from '../../components/Header/header'
 import Profile from '../../components/Profile/profile'
 import DailyTask from '../../components/DailyTask/dailyTask';
 import Tasks from '../../components/Tasks/tasks';
-import Effeciency from '../../components/Efficiency/efficiency';
+
 
 export default function Dashboard(){
     return (

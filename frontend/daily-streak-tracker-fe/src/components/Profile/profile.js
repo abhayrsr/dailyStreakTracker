@@ -1,7 +1,7 @@
 import './profile.css';
 import EditProfile from '../Buttons/editProfileButton/editProfile';
 import Avatar from '../../assets/images/avatar.svg';
-import History from '../Buttons/historyButton/history';
+import Heatmap from '../Buttons/heatmapButton/heatmap';
 import { useState } from 'react';
 
 export default function Profile(){
@@ -34,7 +34,7 @@ export default function Profile(){
             </section>
 
             <div className="profile-history">
-                <History />
+                <Heatmap />
             </div>
         </div>
     )
