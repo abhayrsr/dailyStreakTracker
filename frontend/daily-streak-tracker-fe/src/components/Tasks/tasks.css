@@ -3,7 +3,7 @@
     margin: 1vw;
     padding: 2vh;
     position: relative;
-    top: 20vh;
+    top: 30vh;
     right: -4vw;
     font-size: large;
     border-top-left-radius: 0.5rem;
@@ -15,7 +15,7 @@
     height: 5vh;
     font-size: large;
     position: relative;
-    top: 23vh;
+    top: 33vh;
     right: -3.6vw;
     cursor: pointer;
     border-top-right-radius: 0.5rem;
@@ -42,7 +42,7 @@
     margin: 2vh;
     padding: 1vh 0vh 1vh 0vh;
     position: relative;
-    top: 30vh;
+    top: 40vh;
     right: -7.5vw;
     font-size: large;
     border-radius: 0.5rem;
@@ -91,4 +91,38 @@
     position: fixed;
     left: 76.3vw;
     bottom: 0.3vh;;
+}
+
+.save-button{
+    margin: 1rem;
+    padding: 0.5rem 1rem ;
+    font-size: 1rem;
+    color: #ffffff;
+    border-radius: 0.5rem;
+    background-color: #0D99FF;
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+    overflow: hidden;
+    
+}
+
+.heatmap-component{
+    position: fixed;
+    right: 85vw;
+    top: 75vh;
+}
+
+@media screen and (max-width: 768px){
+    .save-button{
+        font-size: 0.7rem;
+        width: 10vw;
+        height: 6vh;
+    }
+}
+
+.save-button-component{
+    position: relative;
+    top: 30vh;
+    left: 20vw;
 }

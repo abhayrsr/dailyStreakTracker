@@ -5,12 +5,14 @@
 }
 
 .nav{
-    margin: 0;
+    margin: 0rem 0rem 1rem 0rem;
     padding: 0;
-    height: 5rem;
-    width: auto; 
+    height: 10vh;
+    width: 100vw; 
     background-color: black;
     border: 2px;
+    position: fixed;
+    z-index: 1000;
 }
 
 .nav .logo{

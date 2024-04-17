@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Popup from "reactjs-popup";
 import CalendarHeatmap from "react-calendar-heatmap";
 import Select from "react-select";
@@ -5,17 +6,37 @@ import "react-calendar-heatmap/dist/styles.css";
 import "reactjs-popup/dist/index.css";
 import "./heatmap.css";
 
+let yearSelection = new Date();
+
 const options = [
-  { value: "2022", label: "2022" },
-  { value: "2023", label: "2023" },
-  { value: "2024", label: "2024" },
+  { value: yearSelection.getFullYear(), label: yearSelection.getFullYear() },
+  { value: yearSelection.getFullYear() - 1, label: yearSelection.getFullYear() - 1 },
+  { value: yearSelection.getFullYear() - 2, label: yearSelection.getFullYear() - 2 },
 ];
 
-export default function Heatmap() {
+export default function Heatmap({taskCompleted}) {
+  const [timeRange, setTimeRange] = useState(new Date().getFullYear())
   const popupContentStyle = {
     background: "rgb(27 23 23)",
     width: "80vw",
   };
+
+  console.log("heatmap" + taskCompleted);
+  let today = new Date();
+  let dd = today.getDate();
+  let mm = today.getMonth()+1;
+  let yyyy = today.getFullYear();
+
+  if(dd < 10){
+    dd = '0' + dd;
+  }
+
+  if(mm < 10){
+    mm = '0' + mm;
+  }
+
+  const date = yyyy + '-' + mm + '-' + dd;
+
   return (
     <div className="button-component">
       <div className="button-heatmap">
@@ -35,6 +56,7 @@ export default function Heatmap() {
                 {" "}
                 <Select
                   options={options}
+                  defaultValue={options[0]}
                   styles={{
                     control: (baseStyles, state) => ({
                       ...baseStyles,
@@ -47,26 +69,20 @@ export default function Heatmap() {
               <div className="content">
                 <div className="calendar-heatmap-component">
                   <CalendarHeatmap
-                    startDate={new Date("2024-01-01")}
-                    endDate={new Date("2024-12-31")}
+                    startDate={new Date(timeRange, 0, 1)}
+                    endDate={new Date(timeRange, 11, 31)}
                     values={[
-                      { date: "2024-01-01", count: 1 },
-                      { date: "2024-01-03", count: 4 },
-                      { date: "2024-01-06", count: 2 },
-                      { date: "2024-02-01", count: 1 },
-                      { date: "2024-03-03", count: 4 },
-                      { date: "2024-05-06", count: 2 },
-                      { date: "2024-07-01", count: 1 },
-                      { date: "2024-07-02", count: 4 },
-                      { date: "2024-07-03", count: 2 },
-                      // ...and so on
+                      { date: date, count: taskCompleted },
                     ]}
                     classForValue={(value) => {
                       if (!value) {
                         return "color-empty";
                       }
-                      // return `color-scale-${value.count}`;
-                      return `color-filled`;
+                      else if(value.count >= 4){
+                        return `color-github-4`;
+                      }
+                      return `color-github-${value.count}`;
+                      // return `color-filled`;
                     }}
                   />
                 </div>

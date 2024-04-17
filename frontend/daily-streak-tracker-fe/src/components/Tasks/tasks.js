@@ -1,13 +1,22 @@
 import { useState, useEffect } from 'react';
 import Efficiency from '../Efficiency/efficiency';
 import './tasks.css';
+import Heatmap from '../Buttons/heatmapButton/heatmap';
 
 export default function Tasks() {
     const [text, setText] = useState('');
     const [tasks, setTasks] = useState([]);
     const [editId, setEditId] = useState(0);
+    const [numberOfTasksCompleted, setNumberOfTasksCompleted] = useState(0);
     const [efficiency, setEfficiency] = useState(0);
     console.log("effeciency"+efficiency);
+    console.log("taskCompleted" + numberOfTasksCompleted)
+
+    function handleTaskCompletion(){
+      const numberOfTasksCompleted = tasks.filter((task) => task.completed === true).length;
+      setNumberOfTasksCompleted(numberOfTasksCompleted);
+      
+    }
 
     function handleEfficiency(){
       const numberOfTasks = tasks.length;
@@ -77,6 +86,7 @@ export default function Tasks() {
 
     useEffect(() => {
       handleEfficiency();
+      handleTaskCompletion();
   }, [tasks]);
 
     function handleEdit(id) {
@@ -150,7 +160,15 @@ export default function Tasks() {
             <div> </div>
           )}
         </form>
+        <div className="save-button-component">
+          {/* <button className="save-button"
+            onClick={handleTaskChange}
+          >
+            save
+          </button> */}
+        </div>
         <div className="efficiency-component">  <Efficiency efficiency={efficiency}/> </div>
+        <div className="heatmap-component"> < Heatmap taskCompleted={numberOfTasksCompleted}/></div>
       </div>
     );
 }

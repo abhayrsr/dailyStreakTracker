@@ -33,9 +33,9 @@ export default function Profile(){
 
             </section>
 
-            <div className="profile-history">
+            {/* <div className="profile-history">
                 <Heatmap />
-            </div>
+            </div> */}
         </div>
     )
 }
