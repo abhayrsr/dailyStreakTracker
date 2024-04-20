@@ -15,3 +15,69 @@
     height: 40px;
     overflow: hidden;
 }
+
+.header{
+    font-size: 1rem;
+}
+
+.modal {
+    font-size: 12px;
+  }
+  .modal > .header {
+    width: 100%;
+    border-bottom: 1px solid gray;
+    font-size: 25px;
+    font-weight: bolder;
+    text-align: center;
+    padding: 5px;
+  }
+  .modal > .content {
+    width: 100%;
+    padding: 10px 5px;
+  }
+  .modal > .content > .google-button{
+    position: relative;
+    top: 1vh;
+    left: 19.5vw;
+    font-size: 18px;
+    font-weight: bolder;
+    width: 9vw;
+    border-radius: 0.5rem;;
+    display: flex;
+    cursor: pointer;
+  }
+  .modal > .content > .google-button > .google-image{
+    width: 2vw;
+    height: auto;
+    position: relative;
+    left: 0.5vw;
+  }
+  .modal > .content > .google-button > .google-name{
+    position: relative;
+    left: 1.2vw;
+    top: 0.7vh;
+    color: #2f3136;
+  }
+  .modal > .actions {
+    width: 100%;
+    padding: 10px 5px;
+    margin: auto;
+    text-align: center;
+  }
+  .modal > .actions > .term{
+    color: #ffff;
+  }
+  .modal > .close {
+    cursor: pointer;
+    position: absolute;
+    display: block;
+    padding: 2px 5px;
+    line-height: 20px;
+    right: -10px;
+    top: -10px;
+    font-size: 24px;
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid #cfcece;
+  }
+

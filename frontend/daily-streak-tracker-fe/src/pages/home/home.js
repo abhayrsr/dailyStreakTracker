@@ -8,6 +8,7 @@ import heatmap from "../../assets/images/heatmap .png";
 import Efficiency from "../../assets/images/Efficiency.png";
 
 export default function Home() {
+
   return (
     <div className="home">
       <nav className="nav">
@@ -16,7 +17,7 @@ export default function Home() {
         </div>
         <div className="header-button-signout">
           <Light />
-          <Signin />
+          <Signin/>
         </div>
         <div className="header-button-light"></div>
       </nav>
@@ -75,6 +76,16 @@ export default function Home() {
             and more recently with desktop publishing software like Aldus
             PageMaker including versions of Lorem Ipsum.
           </div>
+        </div>
+      </div>
+      <hr className="break"></hr>
+      <div className="media-handles-policies">
+        <h3 className="social-media-handles"> social media handles </h3>
+        <p className="copyright"> Copyright © 2024 streakos.com All rights reserved.</p>
+        <p className="contact"> contact: support@streakos.com </p>
+        <div className="links">
+          <a className="privacy" href="dummy">Privacy</a>
+          <a className="terms" href="dummy"> Terms</a>
         </div>
       </div>
     </div>

@@ -81,3 +81,46 @@
     position: relative;
     top: 20vh;
 }
+
+.break{
+    position: relative;
+    top: 100vh;
+    left:20vw;
+    justify-content: center;
+    text-align: center;
+    width: 60vw;
+}
+
+.media-handles-policies{
+    position: relative;
+    top: 105vh;
+    left: 45vw;
+}
+
+.social-media-handles{
+    color: #fff;
+}
+
+.copyright{
+    margin: 2rem;
+    position: relative;
+    right: 7vw;
+    color: #fff;
+}
+
+.contact{
+    margin: 1rem;
+    position: relative;
+    right: 2vw;
+    color: #fff;
+}
+
+.links{
+    display: flex;
+    padding: 2rem 2rem 4rem 2rem;
+}
+
+.links .privacy{
+    margin: 0rem 1rem 0rem 0rem;
+}
+
