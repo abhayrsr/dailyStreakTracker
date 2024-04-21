@@ -124,3 +124,15 @@
     margin: 0rem 1rem 0rem 0rem;
 }
 
+::-webkit-scrollbar{
+    width: 8px;
+}
+
+::-webkit-scrollbar-track{
+    background: #161B22
+}
+
+::-webkit-scrollbar-thumb{
+    background: #000;
+}
+
