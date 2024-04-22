@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "pg": "^8.11.5"
+  },
+  "name": "dailystreaktracker",
+  "version": "1.0.0",
+  "description": "A daily streak tracker to help maintain motivation for tasks that may be challenging to tackle on a daily basis.",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abhayrsr/dailyStreakTracker.git"
+  },
+  "author": "abhayrsr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abhayrsr/dailyStreakTracker/issues"
+  },
+  "homepage": "https://github.com/abhayrsr/dailyStreakTracker#readme"
+}
