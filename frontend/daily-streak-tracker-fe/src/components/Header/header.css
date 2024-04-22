@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.nav{
+    margin: 0rem 0rem 1rem 0rem;
+    padding: 0;
+    height: 10vh;
+    width: 100vw; 
+    background-color: black;
+    border: 2px;
+    position: fixed;
+    z-index: 1000;
+}
+
+.nav .logo{
+    position: relative;
+    margin: 0;
+    padding: 1rem;
+    top: -4%;
+    right: 33%;
+
+}
+
+.nav .logo .image{
+    width: 15rem;
+    height: 3rem;
+}
+
+.header-button-signout{
+    position: fixed;
+    display:flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2vw;
+    top: 0;
+    right: 5%;
+}
+
+.header-button-light{
+    position: absolute;
+    left: 82%;
+    
+}
+
+@media screen and (max-width: 768px) {
+    .nav .logo{
+        right: 25%;
+    }
+
+    .header-button-signout {
+        left: 70%; /* Adjust as needed for smaller screens */
+    }
+
+    .header-button-light{
+        left: 65%;
+    }
+}

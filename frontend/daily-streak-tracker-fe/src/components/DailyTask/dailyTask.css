@@ -1,0 +1,30 @@
+.dailyTask{
+    margin: 1rem;
+    padding: 0rem 0rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    width: 16vw;
+    height: 14vh;
+    border-radius: 1rem;
+    background: linear-gradient(to right, #000000, #161B22);
+    position: relative;
+    left: 22.5vw;
+}
+
+.dailyTask-date{
+    color: #ffffff;
+    font-size: 2.5vw;
+}
+
+.dailyTask-head{
+    color: #ffffff;
+    font-size: 2vw;
+}
+
+@media screen and (max-width: 768px){
+    .dailyTask{
+        height: 8vh;
+    }
+}
+    

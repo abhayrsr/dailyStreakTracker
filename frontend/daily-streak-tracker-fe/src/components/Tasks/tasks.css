@@ -1,0 +1,128 @@
+.input-tasks{
+    width: 40vw;
+    margin: 1vw;
+    padding: 2vh;
+    position: relative;
+    top: 30vh;
+    right: -4vw;
+    font-size: large;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+
+.add-button{
+    width: 2vw;
+    height: 5vh;
+    font-size: large;
+    position: relative;
+    top: 33vh;
+    right: -3.6vw;
+    cursor: pointer;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+.enter-tasks{
+    margin: 0vh 5vh -8vh 5vh;
+    display: flex;
+}
+
+.checkbox-tasks{
+    width: 2vw;
+    height: 5vh;
+    position: relative;
+    bottom: 1vh;
+    right: 6vh;
+    color: #ffffff
+}
+
+.added-tasks{
+    width: 38.6vw;
+    height: 5vh;
+    margin: 2vh;
+    padding: 1vh 0vh 1vh 0vh;
+    position: relative;
+    top: 40vh;
+    right: -7.5vw;
+    font-size: large;
+    border-radius: 0.5rem;
+    background-color: #ffffff;
+    display: flex;
+    align-items: flex-start;
+    text-wrap:stable;
+
+} 
+
+
+.edit-input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: large;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.edit-button{
+    width: 2vw;
+    height: 5vh;
+    font-size: large;
+    position: absolute;
+    bottom: 0vh;
+    left: 39.5vw;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    
+}
+
+.delete-button{
+    width: 2vw;
+    height: 5vh;
+    font-size: large;
+    position: absolute;
+    bottom: 0vh;
+    left: 41.5vw;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    
+}
+
+.efficiency-component{
+    position: fixed;
+    left: 76.3vw;
+    bottom: 0.3vh;;
+}
+
+.save-button{
+    margin: 1rem;
+    padding: 0.5rem 1rem ;
+    font-size: 1rem;
+    color: #ffffff;
+    border-radius: 0.5rem;
+    background-color: #0D99FF;
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+    overflow: hidden;
+    
+}
+
+.heatmap-component{
+    position: fixed;
+    right: 85vw;
+    top: 75vh;
+}
+
+@media screen and (max-width: 768px){
+    .save-button{
+        font-size: 0.7rem;
+        width: 10vw;
+        height: 6vh;
+    }
+}
+
+.save-button-component{
+    position: relative;
+    top: 30vh;
+    left: 20vw;
+}

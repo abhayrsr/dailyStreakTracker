@@ -1,0 +1,59 @@
+.text-heatmap{
+    margin: 1rem;
+    color: #fff;
+    font-size:large;
+    text-decoration: none;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    background-color: #30363d;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.calender-heatmap-component{
+    position: relative;
+    width: 50vw;
+}
+
+.header{
+    color: white;
+}
+
+.drop-down{
+    width: 10%;
+}
+
+.modal {
+    font-size: 12px;
+  }
+  .modal > .header {
+    width: 100%;
+    border-bottom: 1px solid gray;
+    font-size: 18px;
+    text-align: center;
+    padding: 5px;
+  }
+  .modal > .content {
+    width: 100%;
+    padding: 10px 5px;
+  }
+  .modal > .actions {
+    width: 100%;
+    padding: 10px 5px;
+    margin: auto;
+    text-align: center;
+  }
+  .modal > .close {
+    cursor: pointer;
+    position: absolute;
+    display: block;
+    padding: 2px 5px;
+    line-height: 20px;
+    right: -10px;
+    top: -10px;
+    font-size: 24px;
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid #cfcece;
+  }
+
+

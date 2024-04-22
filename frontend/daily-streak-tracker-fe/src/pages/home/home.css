@@ -1,0 +1,138 @@
+*{  margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.home .nav .logo .image{
+    position: relative;
+    left: 41.1vw;
+}
+
+.home .home-writing{
+    position: relative;
+    top: 30vh;
+    flex-grow: 1;
+}
+
+.home .home-writing .section1,
+.home .home-writing .section2{
+  display: flex;
+}
+
+.home .home-writing .section1 .writing-section1{
+    margin: 2rem;
+    position: relative;
+    top: 80vh;
+}
+
+.home .home-writing .section1 .image-section1
+{
+    margin: 1rem;
+    width: 50%;
+    height: auto;
+}
+
+.home .home-writing .section1 .image-section1 .image-tasklists{
+    width: 50vw;
+    height: 80vh;
+    position: relative;
+    top: 60vh;
+}
+
+.home .home-writing .section2 .writing-section2{
+    margin: 1rem;
+    position: relative;
+    top: 80vh;
+}
+
+.home .home-writing .section2 .image-section2{
+    margin: 8rem 4rem 8rem 8rem;
+    width: 50%;
+    height: auto;
+}
+
+.home .home-writing .section2 .image-section2 .image-efficiency{
+    width: 20vw;
+    height: 80vh;
+    position: relative;
+    top: 60vh;
+}
+
+.home .home-writing .section3{
+    display: block;
+}
+
+.home .home-writing .section3 .image-section3{
+    margin: 1rem 2rem 1rem 2rem;
+    width: 50%;
+    height: auto;
+}
+
+.home .home-writing .section3 .image-section3 .image-heatmap{
+    width: 80vw;
+    height: 35vh;
+    position: relative;
+    top: 80vh;
+    left: 8vw;
+}
+
+.home .home-writing .section3 .writing-section3{
+    margin: 2rem 8rem 2rem 8rem;
+    position: relative;
+    top: 20vh;
+}
+
+.break{
+    position: relative;
+    top: 100vh;
+    left:20vw;
+    justify-content: center;
+    text-align: center;
+    width: 60vw;
+}
+
+.media-handles-policies{
+    position: relative;
+    top: 105vh;
+    left: 45vw;
+}
+
+.social-media-handles{
+    color: #fff;
+}
+
+.copyright{
+    margin: 2rem;
+    position: relative;
+    right: 7vw;
+    color: #fff;
+}
+
+.contact{
+    margin: 1rem;
+    position: relative;
+    right: 2vw;
+    color: #fff;
+}
+
+.links{
+    display: flex;
+    padding: 2rem 2rem 4rem 2rem;
+}
+
+.links .privacy{
+    margin: 0rem 1rem 0rem 0rem;
+}
+
+::-webkit-scrollbar{
+    width: 8px;
+}
+
+::-webkit-scrollbar-track{
+    background: #161B22
+}
+
+::-webkit-scrollbar-thumb{
+    background: #000;
+}
+

@@ -1,0 +1,26 @@
+.button-component{
+    margin: 0;
+    padding: 0;
+}
+
+.editProfile{
+    margin: 1rem;
+    padding: 0.5rem 1rem ;
+    font-size: 1rem;
+    color: #ffffff;
+    border-radius: 0.5rem;
+    background-color: #30363d;
+    cursor: pointer;
+    width: 10vw;
+    height: 6vh;
+    overflow: hidden;
+    
+}
+
+@media screen and (max-width: 768px){
+    .editProfile{
+        font-size: 0.7rem;
+        width: 10vw;
+        height: 6vh;
+    }
+}

@@ -1,0 +1,27 @@
+.dashboard-components{
+    display: flex;
+
+}
+
+.dashboard-header{
+    position: fixed;
+}
+
+.dashboard-tasks{
+    position: relative;
+}
+
+.dashboard-profile{
+    position: fixed;
+    top:11vh;
+}
+
+.dashboard-dailyTask{
+    position: relative;
+    top: 10vh;
+    margin: 1rem;
+}
+.dashboard-heatmap{
+    position: relative;
+    right: 9vw;
+}
