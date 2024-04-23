@@ -1,12 +1,14 @@
 {
   "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "nodemon": "^3.1.0",
     "pg": "^8.11.5"
   },
   "name": "dailystreaktracker",
   "version": "1.0.0",
   "description": "A daily streak tracker to help maintain motivation for tasks that may be challenging to tackle on a daily basis.",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
