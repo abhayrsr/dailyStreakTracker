@@ -1,8 +1,15 @@
 import "./signIn.css";
 import Popup from "reactjs-popup";
+import { GoogleLogin } from "@react-oauth/google";
 import Google from "../../../assets/images/google.svg";
 
 export default function Signin() {
+  const responseMessage = (response) => {
+    console.log(response);
+  };
+  const errorMessage = (error) => {
+    console.log(error);
+  };
   return (
     <div className="button-component">
       <div className="button-signin">
@@ -19,13 +26,23 @@ export default function Signin() {
               </button>
               <div className="header"> Sign in </div>
               <div className="content">
-               <button className="google-button">
-                <img className="google-image" src={Google} alt="Google"/>
-                <span className="google-name">Google</span>
-               </button>
+
+                <GoogleLogin
+                  className="google-button"
+                  onSuccess={responseMessage}
+                  onError={errorMessage}
+                />
+                {/* <button className="google-button">
+                  <img className="google-image" src={Google} alt="Google" />
+                  <span className="google-name">Google</span> 
+                  
+                </button> */}
               </div>
               <div className="actions">
-                <p className="term">By signing in, you agree to codeProMax's terms of service and privacy policy.</p>
+                <p className="term">
+                  By signing in, you agree to codeProMax's terms of service and
+                  privacy policy.
+                </p>
               </div>
             </div>
           )}

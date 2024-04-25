@@ -34,11 +34,13 @@
   .modal > .content {
     width: 100%;
     padding: 10px 5px;
+    display: flex;
+    justify-content: center;
   }
   .modal > .content > .google-button{
     position: relative;
     top: 1vh;
-    left: 19.5vw;
+    left: 20vw;
     font-size: 18px;
     font-weight: bolder;
     width: 9vw;
