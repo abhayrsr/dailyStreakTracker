@@ -1,11 +1,11 @@
 import "./signIn.css";
 import Popup from "reactjs-popup";
 import { GoogleLogin } from "@react-oauth/google";
-import Google from "../../../assets/images/google.svg";
 
 export default function Signin() {
   const responseMessage = (response) => {
     console.log(response);
+    console.log("x")
   };
   const errorMessage = (error) => {
     console.log(error);
@@ -40,7 +40,7 @@ export default function Signin() {
               </div>
               <div className="actions">
                 <p className="term">
-                  By signing in, you agree to codeProMax's terms of service and
+                  By signing in, you agree to Streakos' terms of service and
                   privacy policy.
                 </p>
               </div>
