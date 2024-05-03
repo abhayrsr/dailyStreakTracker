@@ -1,14 +1,41 @@
 import "./signIn.css";
 import Popup from "reactjs-popup";
-import { GoogleLogin } from "@react-oauth/google";
+import axios from "axios";
+import { useState } from "react";
+import { googleLogout, GoogleLogin } from "@react-oauth/google";
 
 export default function Signin() {
-  const responseMessage = (response) => {
+  const [accessToken, setAccessToken] = useState(null);
+
+  const handleLoginSuccess = (response) => {
     console.log(response);
-    console.log("x")
+    const accessToken1 = response;
+    console.log(accessToken1);
+    setAccessToken(accessToken1);
+    axios
+      .post(
+        "/users/google-auth",
+        { accessToken },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
   };
-  const errorMessage = (error) => {
-    console.log(error);
+
+  const handleLoginFailure = (error) => {
+    console.error("Login Failed: ", error);
+  };
+
+  const handleLogoutSuccess = () => {
+    setAccessToken(null);
   };
   return (
     <div className="button-component">
@@ -26,12 +53,13 @@ export default function Signin() {
               </button>
               <div className="header"> Sign in </div>
               <div className="content">
-
                 <GoogleLogin
                   className="google-button"
-                  onSuccess={responseMessage}
-                  onError={errorMessage}
+                  onSuccess={handleLoginSuccess}
+                  onFailure={handleLoginFailure}
+                  isSignedIn={true}
                 />
+
                 {/* <button className="google-button">
                   <img className="google-image" src={Google} alt="Google" />
                   <span className="google-name">Google</span> 
