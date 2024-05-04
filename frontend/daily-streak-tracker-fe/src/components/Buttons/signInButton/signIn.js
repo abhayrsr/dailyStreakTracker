@@ -2,17 +2,26 @@ import "./signIn.css";
 import Popup from "reactjs-popup";
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import { googleLogout, GoogleLogin } from "@react-oauth/google";
 
+const instance = axios.create({
+  baseURL: "http://localhost:5000",
+})
+
 export default function Signin() {
+  const navigate = useNavigate();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [accessToken, setAccessToken] = useState(null);
+  
+  
 
   const handleLoginSuccess = (response) => {
-    console.log(response);
+    console.log('response', response);
     const accessToken1 = response;
-    console.log(accessToken1);
+    console.log('accessToken1',accessToken1);
     setAccessToken(accessToken1);
-    axios
+    instance
       .post(
         "/users/google-auth",
         { accessToken },
@@ -28,6 +37,8 @@ export default function Signin() {
       .catch((error) => {
         console.error("Error:", error);
       });
+      setIsAuthenticated(true);
+      navigate('/dashboard', { replace: true });
   };
 
   const handleLoginFailure = (error) => {
